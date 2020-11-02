@@ -2,7 +2,7 @@ class Event < ApplicationRecord
     belongs_to :admin, class_name: "User"
 
     has_many :attendances
-    has_many :participants, class_name: "User", through: :attendances
+    has_many :users, through: :attendances
 
     validates :start_date_cant_be_in_the_past
     validates :dutation_multiple_of_5
