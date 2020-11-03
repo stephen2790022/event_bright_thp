@@ -18,8 +18,8 @@
   <ul class="list-group list-group-flush text-primary ">
     <li class="list-group-item">Début: <%= @event.start_date %></li>
     <li class="list-group-item">Fin: <%= @event.start_date + @event.duration * 60 %></li>
-    <li class="list-group-item">Durée: <%= @event.duration %></li>
-    <li class="list-group-item">Prix: <%= @event.price %></li>
+    <li class="list-group-item">Durée: <%= @event.duration %> min</li>
+    <li class="list-group-item">Prix: <%= @event.price %> €</li>
     <li class="list-group-item">Lieux: <%= @event.location %></li>
   </ul>
     <p class="card-text m-4  ">
