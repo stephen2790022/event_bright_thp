@@ -1,3 +1,33 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron{
+    background-image: url('event_index.jpg');
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-position:10%;
+    background-size: cover;
+    min-height: 100vh;
+  }
+#jumbotron_create{
+    background-image: url('event-show.jpg');
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-position:10%;
+    background-size: cover;
+    min-height: 90vh;
+    
+}
+#transparent {
+    background: rgba(49, 52, 70, 0.692);
+    max-width: 50rem;
+  }
+
+#jumbotron_new_form{
+    background-image: url('jumbotron_new_form.jpg');
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-position:10%;
+    background-size: cover;
+    min-height: 90vh;
+}

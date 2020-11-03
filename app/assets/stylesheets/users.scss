@@ -1,3 +1,16 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#jumbotron_user_show{
+    background-image: url('user_show_jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-position:10%;
+    background-size: cover;
+    min-height: 90vh;
+}
+
+#user_trans {
+    background: rgba(190, 117, 68, 0.801);
+    max-width: 50rem;
+  }

@@ -1,21 +1,26 @@
 
-<h1>Créé ton événement</h1>
+<div class="jumbotron text-white"id="jumbotron_new_form" >
+    <div class='container text-white'>
+    <h1 class='text-white'>Créé ton événement</h1>
+    <div class='mx-auto text-bold'>
+        <%= simple_form_for @event do |f| %>
+        <%= f.error_notification %>
 
-<%= simple_form_for @event do |f| %>
-  <%= f.error_notification %>
+        <%= f.input :start_date %>
 
-  <%= f.input :start_date %>
+        <%= f.input :duration %>
 
-  <%= f.input :duration %>
+        <%= f.input :title %>
 
-  <%= f.input :title %>
+        <%= f.input :description%>
 
-  <%= f.input :description%>
+        <%= f.input :price%>
 
-  <%= f.input :price%>
+        <%= f.input :location %>
 
-  <%= f.input :location %>
-
-  <%= f.button :submit, class: "btn-primary" %>
-  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-<% end %>
+        <%= f.button :submit, class: "btn-primary", class: "btn btn-info" %>
+        <% end %>
+        </div>
+    </div>
+    
+</div>
