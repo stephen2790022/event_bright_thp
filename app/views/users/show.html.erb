@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+      <div class="card bg-secondary text-white w-50 p-3 mx-auto m-4">
+        <h1 class='text-center'>PROFIL</h1><br><br>
+        <div class="card-header "><h2>Nom: <%= @user.first_name %></h2></div> 
+          <div class="card-body ">
+            <h3 class="card-text ">
+              Prenom: <%= @user.last_name %><br><br>
+              Description: <%= @user.description %> <br><br>
+              Email: <%= @user.email %><br><br>
+            </h3>
+            <a class="btn btn-secondary" <%= link_to 'Editer', edit_user_registration_path  %> </a>
+          </div>
+      </div>
+   </div>   
+</section>
+
+<section>
+<div class="row m-5">			
+	<% @user.admin_events.each do |event| %>
+		<div class="card bg-dark text-white h-75  m-5 p-3  mx-auto" style="width: 30rem;">
+			<div class="card-body">
+				<h1 class="card-title  text-center">
+						Event n° <%= event.id %>
+				</h1>
+				<p class="card-title ">
+					<ul class="list-group list-group-flush text-primary ">
+						<li class="list-group-item">Titre: <%= event.title %></li>
+					</ul>
+				</p>
+			</div>
+			<ul class="list-group list-group-flush text-primary ">
+				<a class="btn btn-primary p-3 m-2" <%= link_to "Voir le event", event_path(event) %></a>
+			</ul>
+			</div>
+	<% end %>
+</div>
+</section>	

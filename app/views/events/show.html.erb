@@ -1,0 +1,27 @@
+<div class="card bg-dark text-white h-75 w-25 p-3  mx-auto" style="width: 18rem;">
+  <div class="card-body">
+    <h1 class="card-title  text-center">
+        Event n° <%= @event.id %>
+    </h1>
+    <p class="card-title ">
+      <ul class="list-group list-group-flush text-primary ">
+        <li class="list-group-item">Titre: <%= @event.title %></li>
+      </ul>
+    </p>
+  </div>
+  <ul class="list-group list-group-flush text-primary ">
+    <li class="list-group-item">Début: <%= @event.start_date %></li>
+    <li class="list-group-item">Fin: <%= @event.start_date + @event.duration * 60 %></li>
+    <li class="list-group-item">Durée: <%= @event.duration %></li>
+    <li class="list-group-item">Prix: <%= @event.price %></li>
+    <li class="list-group-item">Lieux: <%= @event.location %></li>
+  </ul>
+    <p class="card-text m-4  ">
+        <ul class="list-group list-group-flush text-primary ">
+            <li class="list-group-item">
+            CONTENU:<br><%= @event.description %><br>
+            </li>
+        </ul>
+    </p>
+</div>
+

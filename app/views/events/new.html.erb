@@ -1,0 +1,21 @@
+
+<h1>Créé ton événement</h1>
+
+<%= simple_form_for @event do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :start_date %>
+
+  <%= f.input :duration %>
+
+  <%= f.input :title %>
+
+  <%= f.input :description%>
+
+  <%= f.input :price%>
+
+  <%= f.input :location %>
+
+  <%= f.button :submit, class: "btn-primary" %>
+  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+<% end %>
