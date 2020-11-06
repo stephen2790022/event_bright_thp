@@ -4,7 +4,12 @@
   <div class="container mt-4 text-center text-white" > 
     
   </div>
-    <div class="card  text-white h-75 w-25 p-3  mx-auto" style="width: 18rem;" id="transparent">
+    <div class="card  text-white h-75 w-25 p-3  mx-auto" style="width: 30rem;" id="transparent">
+    <%if @event.picture.attached?%>
+        <%= image_tag @event.picture, alt: 'avatar', style: "max-width: 460px ; max-height: 230px; ", class: ' card-img-top' %>
+      <%else%>
+        <p>=== N'hésite pas à éditer ton évènement avec une photo ===</p>
+    <%end%>
   <div class="card-body">
     <h1 class="card-title display-4  text-center">
         Event n° <%= @event.id %>
@@ -25,8 +30,20 @@
     <p class="card-text m-4  ">
         <ul class="list-group list-group-flush text-primary ">
             <li class="list-group-item overflow-auto">
-            CONTENU:<br><%= @event.description %><br>
+              CONTENU:<br><%= @event.description %><br>
             </li>
+            <div class=" btn-group btn-sm" >
+              
+                <% if (current_user != @event.admin) && (!@event.users.include?(current_user)) %>
+                  <a class="btn btn-primary "<%= link_to "Participer à l'évènement", new_event_attendance_path(@event.id) %></a> 
+                <% end %>
+              
+                <% if current_user == @event.admin %>
+                  <a class="btn btn-primary"<%= link_to "Liste des participants", event_attendances_path(@event)  %></a> 
+                  <a href='<%= event_path(@event.id) %>' class='btn btn-danger text-center' data-confirm='Etes-vous sur' data-method='DELETE'>Supprimer</a>
+                <% end %>
+              
+            </div>
         </ul>
     </p>
 </div>

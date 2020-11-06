@@ -1,9 +1,8 @@
 class Event < ApplicationRecord
     belongs_to :admin, class_name: "User"
-
     has_many :attendances
     has_many :users, through: :attendances
-
+    has_one_attached :picture
     # validates :start_date_cant_be_in_the_past
     # validates :dutation_multiple_of_5
     # validate :start_date, presence: true
@@ -22,4 +21,10 @@ class Event < ApplicationRecord
         errors.add(:duration, "Dois-être un multiple de 5") if
         duration.to_f % 5 != 0
     end
+
+    def amount
+        self.price * 100
+    end
+
+
 end

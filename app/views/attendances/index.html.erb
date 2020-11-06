@@ -1,0 +1,36 @@
+<div class="jumbotron"id="jumbotron_create" >
+  <div class="container mt-4 text-center text-white" > 
+    
+  </div>
+    <div class="card  text-white h-75 w-25 p-3  mx-auto" style="width: 18rem;" id="transparent">
+  <div class="card-body">
+    <h1 class="card-title display-4  text-center">
+        Event n° <%= @event.id %>
+    </h1>
+    <p class="card-title ">
+      <ul class="list-group list-group-flush text-primary ">
+        <li class="list-group-item">Titre: <%= @event.title %></li>
+      </ul>
+    </p>
+  </div>
+<% @attendances.each do |atendance| %>
+  <ul class="list-group list-group-flush text-primary ">
+    <li class="list-group-item">Début: <%= attendance.first_name %></li>
+    <li class="list-group-item">Fin: <%= attendance.last_name  %></li>
+    <li class="list-group-item">Durée: <%= attendance.age %> min</li>
+    <li class="list-group-item">Prix: <%= attendance.email %> €</li>
+    <li class="list-group-item">Lieux: <%= attendance.location %></li>
+  </ul>
+<% end %>
+    <p class="card-text m-4  ">
+        <ul class="list-group list-group-flush text-primary ">
+            
+           
+            <li class="list-group-item overflow-auto">
+                <a class="btn btn-primary"<%= link_to "Edite l'évènement", edit_event_path(@event.id) %></a> 
+            </li>
+        </ul>
+    </p>
+</div>
+    
+</div>

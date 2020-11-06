@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
     after_create :welcome_send
     
+    has_one_attached :avatar
     # admin_events () / foreign_key: 'admin_event_id' == la clef qui appartient au admins
     #                                                    qui apparaitra dans la table event 
     has_many :admin_events, foreign_key: 'admin_id', class_name: "Event"
